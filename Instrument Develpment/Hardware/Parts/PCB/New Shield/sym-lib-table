@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name Shield_v2-rescue)(type Legacy)(uri ${KIPRJMOD}/Shield_v2-rescue.lib)(options "")(descr ""))
+  (lib (name sn75441)(type Legacy)(uri ${KIPRJMOD}/sn75441.lib)(options "")(descr ""))
+)
