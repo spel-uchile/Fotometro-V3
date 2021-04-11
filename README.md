@@ -1,2 +1,2 @@
 # Fotometro V3
- This is the Aotumatica LED-Based Sun Photometer
+ This is the Aotumatic LED-Based Sun Photometer
