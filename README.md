@@ -1,2 +1,2 @@
 # Fotometro V3
- This is the Aotumatic LED-Based Sun Photometer
+ This is the Low Cost Aotumatic LED-Based Sun Photometer (LoCo-ASP)
