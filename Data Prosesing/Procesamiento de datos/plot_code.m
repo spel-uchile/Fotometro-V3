@@ -1,25 +1,34 @@
 %% LF 16062018
 %Archivo de Calibracion
-load('Calb/01.mat')
+load('Calb/02.mat')
 %Archivo de Datos
-load('Stgo/01.mat')
+load('Stgo/02.mat')
 %Datos Aeronet
-load('Aero/aero_01_C.mat')
+load('Aero/aero_02_C.mat')
 
 % Extracion de datos del dia
-day = 27;
-month = 11;
+day = 15;
+month = 10;
 year = 2018;
 
 % Datos de calibracion
-cday= 27;
-cmonth = 11;
+cday= 23;
+cmonth = 07;
 cyear = 2018;
+
+% Datos de calibracion
+cday2= 23;
+cmonth2 = 11;
+cyear2 = 2018;
 
 c1 = 1;
 
-[data, date, adata, adate] = aod_data(aero, out, stgo, day, month, year, cday, cmonth, cyear, 3);
+[data, date, adata, adate] = aod_data(aero, out, stgo, day, month, year, cday, cmonth, cyear, 1);
 
+[data2, date2, adata2, adate2] = aod_data(aero, out, stgo, day, month, year, cday2, cmonth2, cyear2, 1);
+
+
+hold on;
 fig1 = figure(2);
 plot(adate,adata,'.-');
 c1 = c1+1;
@@ -34,7 +43,7 @@ legend();
 xlabel('Time');
 ylabel(strcat("AOD",{' '}, '408',{' '}, "nm"));
 title('Sensor 0');
-hold off;
+%hold off;
 
 %% LF LR 30072018
 %Archivo de Calibracion

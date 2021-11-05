@@ -316,10 +316,36 @@ for i=1:1:length(adate11)
         ol_avg(k) = mean(ol_data);
         ol_std(k) = std(ol_data);
         ol_mdt(k) = mean(ol_date);
-         
+ 
+        i3 = find((data<=(avge(k)+3*sdv(k))) & data>=(avge(k)-3*sdv(k)));
+        i2 = find((data<=(avge(k)+2*sdv(k))) & data>=(avge(k)-2*sdv(k)));
+        i1 = find((data<=(avge(k)+1*sdv(k))) & data>=(avge(k)-1*sdv(k)));
+        d3 = data(i3);
+        d2 = data(i2);
+        d1 = data(i1);
+        l1 = date(i1);
+        l2 = date(i2);
+        l3 = date(i3);
+        figure(31)
+        hold on
+        plot(l3,d3,'.b');
+        plot(l2,d2,'.g');
+        plot(l1,d1,'.r');
+        
+        
+        text = mat2str(d3);
+        tiempo = strcat(mat2str(hour(l3(1))),'_',mat2str(minute(l3(1))));
+        fileID = fopen('textfile.txt','a+');           
+        fprintf(fileID, strcat(tiempo,'_',text(2:end-1),'\n'));     
+        fclose(fileID);
+        
         k = k+1;
     end
 end
+figure(31)
+plot(ol_mdt,amdt,'k')
+grid on
+
 figure(23)
 plot(datenum(mdt),amdt,'r')
 grid on
